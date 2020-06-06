@@ -12,7 +12,24 @@ func Sum(nums ...int) int {
 	return total
 }
 
+func dropFirstLast(grades ...int) int {
+	total := 0
+	grades = grades[1 : len(grades)-1]
+	for _, grade := range grades {
+		total += grade
+	}
+	return total / len(grades)
+}
+
 func main() {
+	// Providing a Slice as an argument
+	grades := []int{10, 8, 9, 10, 2}
+	avg := dropFirstLast(grades...)
+	fmt.Println("The average is:", avg)
+
+}
+
+func main1() {
 	// Providing four arguments
 	total := Sum(1, 2, 3, 4)
 	fmt.Println("The Sum is:", total)
