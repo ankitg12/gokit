@@ -1,7 +1,19 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
-	fmt.Println("Hello, World")
+	var (
+		fullname = "Ankit Gaur"
+	)
+	name := strings.Split(fullname, string(' '))
+	firstname := name[0]
+	// lastname := name[-1]
+
+	for i := -5; i < 5; i++ {
+		fmt.Println(i, "Hello, ", firstname)
+	}
 }
